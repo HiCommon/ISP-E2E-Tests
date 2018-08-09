@@ -7,27 +7,33 @@ exports.config = {
   capabilities: [
     {
       'device': 'iPhone X',
-      'os_version': '11.0'
+      'os_version': '11.0',
+      'realMobile': 'true'
     },
     {
       'device': 'iPhone 8',
-      'os_version': '11.0'
+      'os_version': '11.0',
+      'realMobile': 'true'
     },
     {
       'device': 'Samsung Galaxy S9',
-      'os_version': '8.0'
+      'os_version': '8.0',
+      'realMobile': 'true'
     },
     {
       'device': 'Google Pixel',
-      'os_version': '7.1'
+      'os_version': '7.1',
+      'realMobile': 'true'
     },
     {
       'device': 'Samsung Galaxy S8',
-      'os_version': '7.0'
+      'os_version': '7.0',
+      'realMobile': 'true'
     },
     {
       'device': 'Google Nexus 6',
-      'os_version': '6.0'
+      'os_version': '6.0',
+      'realMobile': 'true'
     },
     {
       'os': 'Windows',
