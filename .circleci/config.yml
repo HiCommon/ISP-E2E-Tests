@@ -1,0 +1,13 @@
+version: 2
+jobs:
+  build:
+    docker: # See https://docs.docker.com/get-started/#docker-concepts if you are new to Docker.
+      - image: cyber4all/circleci-aws:node-alpine
+    steps:
+      - checkout
+      - run:
+        - name: Install dependencies
+        - command: yarn
+      - run:
+        - name: Test
+        - command: yarn run test
