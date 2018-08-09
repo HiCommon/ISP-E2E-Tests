@@ -1,0 +1,16 @@
+{
+  "name": "interactive-sales-path-e2e-tests",
+  "version": "1.0.0",
+  "scripts": {
+    "test": "node -r dotenv/config ./node_modules/.bin/wdio browserstack.conf.js"
+  },
+  "dependencies": {
+    "chai": "^4.1.2",
+    "dotenv": "^6.0.0",
+    "faker": "^4.1.0",
+    "jsforce": "^1.9.0",
+    "mocha": "^5.2.0",
+    "wdio-mocha-framework": "^0.6.2",
+    "webdriverio": "^4.13.1"
+  }
+}
