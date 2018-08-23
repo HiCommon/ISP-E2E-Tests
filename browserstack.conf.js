@@ -1,4 +1,5 @@
-const { BROWSERSTACK_USERNAME, BROWSERSTACK_KEY } = process.env;
+const axios = require('axios');
+const { BROWSERSTACK_USERNAME, BROWSERSTACK_KEY, BROWSERSTACK_BUILD_ID } = process.env;
 
 exports.config = {
   user: BROWSERSTACK_USERNAME,
@@ -90,7 +91,6 @@ exports.config = {
       'browser_version': '68.0',
       'resolution': '1920x1080'
     }
-
   ],
   maxInstances: 10,
   specs: [
@@ -100,5 +100,27 @@ exports.config = {
   mochaOpts: {
     ui: 'bdd',
     timeout: 100000
+  },
+  before: function (capabilities, specs) {
+    console.log('Session running at:')
+    console.log(JSON.stringify(capabilities))
+    console.log(`https://www.browserstack.com/automate/builds/${BROWSERSTACK_BUILD_ID}/sessions/${browser.sessionId}`)
+  },
+  after: function (exitCode, capabilities, specs) {
+    const status = exitCode === 1 ? 'failed' : 'passed';
+    return axios.put(
+      `https://api.browserstack.com/automate/sessions/${browser.sessionId}.json`,
+      { status },
+      {
+        auth: {
+          username: BROWSERSTACK_USERNAME,
+          password: BROWSERSTACK_KEY
+        }
+      }
+    )
+    .catch(err => {
+      console.error('Error updating status:');
+      console.error(err);
+    });
   }
 }

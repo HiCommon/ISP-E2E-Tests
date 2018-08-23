@@ -5,6 +5,7 @@
     "test": "node -r dotenv/config ./node_modules/.bin/wdio browserstack.conf.js"
   },
   "dependencies": {
+    "axios": "^0.18.0",
     "chai": "^4.1.2",
     "dotenv": "^6.0.0",
     "faker": "^4.1.0",

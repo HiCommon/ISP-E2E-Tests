@@ -39,16 +39,16 @@ describe('Happy path on Interactive Sales Path', function () {
     firstCity
       .click()
       .pause(2000);
-    const moveDateButton = $('#move-date .buttons-container .isp-button');
+    const moveDateButton = $('#move-date .buttons__inner__container .isp-button');
     moveDateButton
       .click()
       .pause(2000);
-    const leaseLengthButton = $('.lease-length-step .buttons-container .isp-button:nth-child(2)');
+    const leaseLengthButton = $('.budget-lease-step .buttons__inner__container .isp-button:nth-child(2)');
     leaseLengthButton
       .click()
       .pause(2000);
 
-    const budgetSubmissionButton = $('.budget-step .budget-container button.isp-budget-step');
+    const budgetSubmissionButton = $('.budget-lease-step .budget-container button.isp-budget-step');
     budgetSubmissionButton
       .click()
       .pause(5000);
