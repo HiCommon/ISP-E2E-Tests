@@ -9,6 +9,7 @@ const {
 } = require('../salesforceAPIHelpers');
 
 const {
+  FUNCTIONAL_QA_STAGING_URL,
   WEBSITE_TO_TEST,
   SALESFORCE_LOGIN_URL,
   SALESFORCE_EMAIL,
@@ -30,7 +31,7 @@ describe('Happy path on Interactive Sales Path', function () {
     const phoneNumber = faker.phone.phoneNumberFormat();
     const email = `${firstName}_${lastName}_fake@hotmail.com`.toLowerCase();
     browser
-      .url(WEBSITE_TO_TEST)
+      .url(FUNCTIONAL_QA_STAGING_URL)
       .pause(2000);
 
     expect(browser.getTitle().match(/Application Form | Common/i));
