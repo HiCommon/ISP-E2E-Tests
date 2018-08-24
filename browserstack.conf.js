@@ -1,8 +1,5 @@
 const axios = require('axios');
 const { RAY_BROWSERSTACK_USERNAME, RAY_BROWSERSTACK_KEY, BROWSERSTACK_BUILD_ID } = process.env;
-console.log("======================")
-console.log("Configure BrowserStack")
-console.log("======================")
 
 exports.config = {
   user: RAY_BROWSERSTACK_USERNAME,
