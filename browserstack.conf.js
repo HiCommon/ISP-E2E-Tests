@@ -1,9 +1,9 @@
 const axios = require('axios');
-const { RAY_BROWSERSTACK_USERNAME, RAY_BROWSERSTACK_KEY, BROWSERSTACK_BUILD_ID } = process.env;
+const { BROWSERSTACK_USERNAME, BROWSERSTACK_KEY, BROWSERSTACK_BUILD_ID } = process.env;
 
 exports.config = {
-  user: RAY_BROWSERSTACK_USERNAME,
-  key: RAY_BROWSERSTACK_KEY,
+  user: BROWSERSTACK_USERNAME,
+  key: BROWSERSTACK_KEY,
 
   capabilities: [
     {
@@ -113,8 +113,8 @@ exports.config = {
       { status },
       {
         auth: {
-          username: RAY_BROWSERSTACK_USERNAME,
-          password: RAY_BROWSERSTACK_KEY
+          username: BROWSERSTACK_USERNAME,
+          password: BROWSERSTACK_KEY
         }
       }
     )
